@@ -1,7 +1,7 @@
 import React from "react";
-import {Button, Figure, Jumbotron as Jumbo, Container} from "react-bootstrap"
+import {  Jumbotron as Jumbo, Container} from "react-bootstrap"
 import styled from "styled-components";
-import Steak from "../assets/steak.jpg"
+import Steak from "../../assets/steak.jpg"
 
 const Styles = styled.div`
     .jumbotron {
@@ -9,7 +9,7 @@ const Styles = styled.div`
         background-size: cover;
         color: white;
         height: 90vh;
-      
+     
     }
     
     .circle-figure {
@@ -51,18 +51,18 @@ const Jumbotron = () => {
             <Jumbo fluid className="jumbo">
                 <Container>
                 <div className="overlay"></div>
-                    <Figure className="circle-figure">
-                        <Figure.Caption className="circle-figure-cap">
-                            Recipe of a Day
-                        </Figure.Caption>
-                    </Figure>
-                    <Figure className="square-figure">
-                        <Figure.Caption className="square-figure-cap">
-                            <h2>Bobi-Wan Kenobi (Balinese Sticky Glazed Pork Ribs)</h2>
-                            <p>This sweet and smoky dish can easily be made in advance and reheated</p>
-                            <p>Bobi-Wan Kenobi</p>
-                        </Figure.Caption>
-                    </Figure>
+                    {/*<Figure className="circle-figure">*/}
+                    {/*    <Figure.Caption className="circle-figure-cap">*/}
+                    {/*        Recipe of the Day*/}
+                    {/*    </Figure.Caption>*/}
+                    {/*</Figure>*/}
+                    {/*<Figure className="square-figure">*/}
+                    {/*    <Figure.Caption className="square-figure-cap">*/}
+                    {/*        <h2>Bobi-Wan Kenobi (Balinese Sticky Glazed Pork Ribs)</h2>*/}
+                    {/*        <p>This sweet and smoky dish can easily be made in advance and reheated</p>*/}
+                    {/*        <p>Bobi-Wan Kenobi</p>*/}
+                    {/*    </Figure.Caption>*/}
+                    {/*</Figure>*/}
                 </Container>
             </Jumbo>
         </Styles>

@@ -1,7 +1,8 @@
 import React from "react";
-import {Card, Button, Figure, Jumbotron as Jumbo, Container} from "react-bootstrap"
+import {Card, Container} from "react-bootstrap"
 import styled from "styled-components";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import "../style.css";
 import {faHamburger, faFish, faSeedling, faDrumstickBite, faPizzaSlice, faBaby, faBacon, faChartPie} from '@fortawesome/free-solid-svg-icons'
 
 const hamburger = <FontAwesomeIcon icon={faHamburger} size="8x"/>
@@ -14,7 +15,6 @@ const steak = <FontAwesomeIcon icon={faBacon} size="8x"/>
 const pie = <FontAwesomeIcon icon={faChartPie} size="8x"/>
 
 const Styles = styled.div`
-      
        .header-name {
             text-align: center;
             border-bottom: 7px solid black;
@@ -22,8 +22,7 @@ const Styles = styled.div`
             h1 {
                 font-size:4rem;
                 font-weight: 800;
-                font-family:serif;
-                color: black;
+                font-family:'Alfa Slab One';
             }
        }
        
@@ -38,7 +37,7 @@ const Styles = styled.div`
        .category-card {
             width: 200px;
             height: 200px;
-            background-color: yellow;
+            background-color: #eb812e;
             margin: 20px;
             display:flex;
             align-items:center;
@@ -46,6 +45,8 @@ const Styles = styled.div`
             
             &:hover {
                 transform: scale(1.1);
+                box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+
             }
        }
         
@@ -103,3 +104,5 @@ const Category = () => {
 };
 
 export default Category;
+
+
