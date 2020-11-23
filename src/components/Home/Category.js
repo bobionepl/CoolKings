@@ -1,9 +1,12 @@
-import React from "react";
+import React, {useRef, useState} from "react";
 import {Card, Container} from "react-bootstrap"
 import styled from "styled-components";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import "../style.css";
 import {faHamburger, faFish, faSeedling, faDrumstickBite, faPizzaSlice, faBaby, faBacon, faChartPie} from '@fortawesome/free-solid-svg-icons'
+import {Link, useHistory} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {searchByProducts} from "../../Redux/actions";
 
 const hamburger = <FontAwesomeIcon icon={faHamburger} size="8x"/>
 const chicken = <FontAwesomeIcon icon={faDrumstickBite} size="8x"/>
@@ -46,7 +49,7 @@ const Styles = styled.div`
             &:hover {
                 transform: scale(1.1);
                 box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
-
+                cursor: pointer;
             }
        }
         
@@ -57,6 +60,15 @@ const Styles = styled.div`
 
 const Category = () => {
 
+    const history = useHistory();
+    const dispatch = useDispatch();
+
+    const handleClick = (e) => {
+        console.log(e.target.attributes.value.value)
+        dispatch(searchByProducts(e.target.attributes.value.value));
+        history.push(`/results/${e.target.attributes.value.value}`);
+    };
+
     return (
         <Styles>
             <Container>
@@ -65,35 +77,35 @@ const Category = () => {
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere iure nisi quidem quo quod vero.</p>
                 </div>
                 <div className="card-container">
-                    <Card className="category-card">
+                    <Card className="category-card" value="fish" onClick={handleClick}>
                         <i className="fas fa-fish">{fish}</i>
-                        <Card.Title>Fish</Card.Title>
+                        <Card.Title value="fish">Fish</Card.Title>
                     </Card>
-                    <Card className="category-card">
+                    <Card className="category-card" value="burgers" onClick={handleClick}>
                         <i className="fas fa-hamburger">{hamburger}</i>
                         <Card.Title>Burgers</Card.Title>
                     </Card>
-                    <Card className="category-card">
+                    <Card className="category-card" value="chicken" onClick={handleClick}>
                         <i className="fas fa-chicken">{chicken}</i>
                         <Card.Title>Chicken</Card.Title>
                     </Card>
-                    <Card className="category-card">
+                    <Card className="category-card" value="vegetarian" onClick={handleClick}>
                         <i className="fas fa-vege">{vege}</i>
                         <Card.Title>Vege</Card.Title>
                     </Card>
-                    <Card className="category-card">
+                    <Card className="category-card" value="pizza" onClick={handleClick}>
                         <i className="fas fa-pizza">{pizza}</i>
                         <Card.Title>Pizza</Card.Title>
                     </Card>
-                    <Card className="category-card">
+                    <Card className="category-card" value="soup" onClick={handleClick}>
                         <i className="fas fa-soup">{soup}</i>
                         <Card.Title>Soup</Card.Title>
                     </Card>
-                    <Card className="category-card">
+                    <Card className="category-card" value="steak" onClick={handleClick}>
                         <i className="fas fa-steak">{steak}</i>
                         <Card.Title>Steaks</Card.Title>
                     </Card>
-                    <Card className="category-card">
+                    <Card className="category-card" value="pie" onClick={handleClick}>
                         <i className="fas fa-pie">{pie}</i>
                         <Card.Title>Cakes</Card.Title>
                     </Card>

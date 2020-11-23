@@ -12,7 +12,7 @@ const Home = () => {
             <Jumbotron />
             <RecipeCarousel />
             <Category />
-            <VideoCarousel />
+            {/*<VideoCarousel />*/}
             <Newsletter />
             <Footer />
         </div>

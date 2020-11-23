@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Nav, Navbar, Form, FormControl } from "react-bootstrap";
 import logo from "../assets/logo.png"
 import { NavStyle } from '../css/navigationBar';
@@ -6,9 +6,7 @@ import { searchByProducts } from "../Redux/actions";
 import {useDispatch} from "react-redux";
 import { useHistory } from "react-router-dom";
 
-
 export const NavigationBar = () => {
-
     const searchValue = useRef();
     const dispatch = useDispatch();
     let history = useHistory();
@@ -36,9 +34,9 @@ export const NavigationBar = () => {
                         <FormControl type="text" placeholder="What Would You Like To Cook?" className="search-bar" ref={searchValue} />
                     </Form>
                     <Nav className="nl-auto">
-                        <Nav.Item className="nav-elem"><Nav.Link href="/">WHAT TO COOK THIS WEEK</Nav.Link></Nav.Item>
-                        <Nav.Item className="nav-elem"><Nav.Link href="/">GROCERY LIST</Nav.Link></Nav.Item>
-                        <Nav.Item className="nav-elem"><Nav.Link href="/">RECIPE BOX</Nav.Link></Nav.Item>
+                        <Nav.Item className="nav-elem"><Nav.Link href="/propositions">WHAT TO COOK THIS WEEK</Nav.Link></Nav.Item>
+                        <Nav.Item className="nav-elem"><Nav.Link href="/grocery">GROCERY LIST</Nav.Link></Nav.Item>
+                        <Nav.Item className="nav-elem"><Nav.Link href="/recipeBox">RECIPE BOX</Nav.Link></Nav.Item>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {Container} from "react-bootstrap";
-import styled from "styled-components";
-import "../style.css"
-import Newsletter from "../Newsletter";
-import {useSelector} from "react-redux";
 import RecipeCard from "../Cards/RecipeCard";
+import Newsletter from "../Newsletter";
 import Footer from "../Footer";
+import styled from "styled-components";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchRecipes} from "../../Redux/actions";
 import Spinner from "react-bootstrap/Spinner";
 
 
@@ -17,11 +17,12 @@ const Styles = styled.div`
         align-items:center;
         justify-content: center;
         border-bottom: 7px solid black;
+        text-align:center;
         
         
         h1 {
             font-family:'Alfa Slab One';
-            font-size:4rem;
+            font-size:3rem;
             font-weight: 800;
             }
     }
@@ -38,9 +39,17 @@ const Styles = styled.div`
         }
 `
 
-const Results = () => {
 
-    const results = useSelector(state => state.recipes.searchRecipes);
+
+const WhatToCook = () => {
+
+    const results = useSelector(state => state.recipes.carouselRecipes);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchRecipes());
+
+    },[]);
+
 
     return (
         !results ?
@@ -52,7 +61,7 @@ const Results = () => {
         <Styles>
             <Container >
                 <div className="header_results">
-                    <h1>Results</h1>
+                    <h1>What To Cook This Week?</h1>
                 </div>
                 <div className="results">
                     {results?.map((result, index) => <RecipeCard className="card" recipe={result} key={index}/>)}
@@ -61,8 +70,7 @@ const Results = () => {
             <Newsletter/>
             <Footer/>
         </Styles>
-
     )
 }
 
-export default Results;
+export default WhatToCook;
