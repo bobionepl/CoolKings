@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {  Jumbotron as Jumbo, Container} from "react-bootstrap"
 import styled from "styled-components";
-import Steak from "../../assets/steak.jpg"
+import Steak from "../../assets/steak.png"
 import {useDispatch, useSelector} from "react-redux";
 import { randomJoke} from "../../Redux/actions";
 

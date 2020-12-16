@@ -8,6 +8,7 @@ const divStyle = {
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
+    clear:"both",
 }
 
 const Styles = styled.div`
@@ -34,7 +35,7 @@ const Newsletter = () => {
     return (
         <div style={divStyle}>
             <Styles>
-                <Container>
+                <Container >
                     <div>
                         <h1>Get Our Newsletter</h1>
                         <p>Get recipes, tips and special offers delivered straight to your inbox. </p>

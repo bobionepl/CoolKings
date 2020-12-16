@@ -67,7 +67,24 @@ const Styles = styled.div`
         font-family: 'Playfair Display', serif;
         font-size: 19px;
     }
-   
+    
+    @media (max-width: 480px) {
+    
+        .recipe_info {
+            .recipe_img {
+                height: 250px;
+                width: 100%;
+            }
+        }
+        
+        .recipe_instruction_box .recipe_ingredients li {
+            font-size: 15px;
+        }
+        
+        .recipe_instruction_box .recipe_instruction li {
+            font-size: 15p;
+        }
+    }
 `;
 
 

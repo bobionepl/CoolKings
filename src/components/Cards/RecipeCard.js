@@ -9,7 +9,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 
-
 const Styles = styled.div`
     .recipe_card {
         width:200px;
@@ -55,6 +54,25 @@ const Styles = styled.div`
     .card_footer {
         display:flex;
         justify-content: space-between;
+    }
+    
+    @media (max-width: 480px) {
+        .recipe_card {
+            width:150px;
+            height:260px;
+           
+        }
+    
+        .sourceName { 
+            display:none;
+        }
+        
+        .card-body{
+            min-height:0px;
+        }
+        .card_title {
+            margin-bottom:0px;
+        }
     }
 `;
 
